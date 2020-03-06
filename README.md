@@ -9,7 +9,7 @@ source .venv/bin/activate
 
 * Instala dependências do projeto
 ```
-*pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 * Aplica as migrações e roda o servidor local
 ```
