@@ -10,7 +10,7 @@ from registration.models import Registration
 
 
 # Create your views here.
-def subscribe(request):
+def registration(request):
     if request.method == 'POST':
         return create(request)
     else:
@@ -46,7 +46,7 @@ def detail(request, pk):
     except Registration.DoesNotExist:
         raise Http404
     return render(request, 'registration/registration_detail.html',
-                    {'registration': registration})
+                    {'registration': registration   })
 
 
 
