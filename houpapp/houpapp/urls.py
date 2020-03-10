@@ -29,5 +29,6 @@ router.register(r'blog', views.BlogViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
+    path('login', login),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

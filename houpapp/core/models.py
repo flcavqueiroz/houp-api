@@ -4,6 +4,7 @@ from django.db import models
 
     
 
+
 class Home(models.Model):
     home = models.CharField(max_length=10)
     name = models.CharField(max_length=20)
