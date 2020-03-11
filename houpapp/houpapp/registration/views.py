@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from registration.forms import RegistrationForm
+from houpapp.registration.forms import RegistrationForm
 from django.http import HttpResponseRedirect, Http404
 from django.core import mail
 from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
-from registration.models import Registration
+from houpapp.registration.models import Registration
 
 
 
@@ -32,7 +32,7 @@ def create(request):
                 'registration/registration_email.txt',
                 {'registration': registration})
     
-    return HttpResponseRedirect('/cadastro/{}/'.format(registration.pk))
+    return HttpResponseRedirect(f'/cadastro/{registration.pk}/')
     
         
 

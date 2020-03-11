@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'houpapp',
-    'core',
-    'registration.apps.RegistrationConfig'
+    'houpapp.core',
+    'houpapp.registration.apps.RegistrationConfig'
 ]
 
 MIDDLEWARE = [

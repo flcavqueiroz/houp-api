@@ -16,16 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from core import views
-from registration.views import registration, detail
+from houpapp.core import views
+from houpapp.registration.views import registration, detail
 
 
 router = routers.DefaultRouter()
 router.register(r'home', views.HomeViewSet)
 router.register(r'work', views.WorkViewSet)
-router.register(r'price', views.FAQViewSet)
+router.register(r'price', views.PriceViewSet)
 router.register(r'case', views.CaseViewSet)
-router.register(r'faq', views.PriceViewSet)
+router.register(r'faq', views.FAQViewSet)
 router.register(r'blog', views.BlogViewSet)
 
 # Wire up our API using automatic URL routing.
