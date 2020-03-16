@@ -33,6 +33,16 @@
                     {{ form.phone.errors }}
                     {{ form.phone }}
                 </div>
+                <div class="form-row label-block input-text">
+                    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                    {{ form.password.errors }}
+                    {{ form.password }}
+                </div>
+                <div class="form-row label-block input-text">
+                    <label for="{{ form.password.id_for_label }}">{{ form.password_confirm.label }}</label>
+                    {{ form.password_confirm.errors }}
+                    {{ form.password_confirm }}
+                </div>
                 <p class="btn-row"><input type="submit" value="Enviar!"/></p>
             </form>
         </div>

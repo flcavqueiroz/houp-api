@@ -40,6 +40,7 @@ def new(request):
     return render(request, 'registration/registration_form.html', 
                     {'form': RegistrationForm()})
 
+
 def detail(request, pk):
     try:
         registration = Registration.objects.get(pk=pk)
@@ -47,6 +48,11 @@ def detail(request, pk):
         raise Http404
     return render(request, 'registration/registration_detail.html',
                     {'registration': registration   })
+
+            
+def password(request):
+    return render(request, 'registration/registration_form.html',
+                    {'form': RegistrationForm()})
 
 
 def _send_mail(subject, from_, to, template_name, context):

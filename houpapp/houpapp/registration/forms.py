@@ -6,3 +6,4 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField(label = 'Email')
     phone = forms.CharField(label = 'Telefone')
     password = forms.CharField(label = 'Senha')
+    password_confirm = forms.CharField(label = 'Confirme sua senha')
