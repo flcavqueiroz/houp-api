@@ -24,7 +24,10 @@ class Case(models.Model):
     name = models.CharField(max_length=20)
 
 class Price(models.Model):
-    value = models.IntegerField()
+    first_value = models.IntegerField()
+    second_value = models.IntegerField()
+    third_value = models.IntegerField()
+    
 
 class FAQ(models.Model):
     question = models.CharField(max_length=100)

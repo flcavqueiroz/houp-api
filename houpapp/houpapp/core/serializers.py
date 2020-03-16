@@ -23,7 +23,7 @@ class CaseSerializer(serializers.ModelSerializer):
 class PriceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Price
-        fields = ['id', 'value']
+        fields = ['id', 'first_value', 'second_value', 'third_value']
 
 class FAQSerializer(serializers.ModelSerializer):
     class Meta:
