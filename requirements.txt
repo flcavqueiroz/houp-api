@@ -7,4 +7,4 @@ pkg-resources==0.0.0
 pytz==2019.3
 sqlparse==0.3.1
 static3==0.7.0
-pyscopg2==2.8.4
+whitenoise==5.0.1

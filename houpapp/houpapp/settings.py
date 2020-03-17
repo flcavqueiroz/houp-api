@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'houpapp',
     'houpapp.core',
     'houpapp.registration.apps.RegistrationConfig',
-    'frontend'
+    'frontend',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'houpapp.urls'
