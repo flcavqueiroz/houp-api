@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'houpapp',
     'houpapp.core',
-    'houpapp.registration.apps.RegistrationConfig'
+    'houpapp.registration.apps.RegistrationConfig',
+    'frontend'
 ]
 
 MIDDLEWARE = [
