@@ -8,7 +8,7 @@ from houpapp.core.models import Home, Work, Case, Price, FAQ, Blog
 
 
 def index(request):
-    return render(request, 'frontend/public/index.html')
+    return render(request, 'index.html')
 
 class HomeViewSet(viewsets.ModelViewSet):
     """
