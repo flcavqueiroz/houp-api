@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'houpapp',
     'houpapp.core',
     'houpapp.registration.apps.RegistrationConfig',
-    'frontend',
     'whitenoise'
 ]
 

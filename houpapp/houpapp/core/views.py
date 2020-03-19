@@ -7,9 +7,6 @@ from houpapp.core.serializers import HomeSerializer, WorkSerializer, CaseSeriali
 from houpapp.core.models import Home, Work, Case, Price, FAQ, Blog
 
 
-def index(request):
-    return render(request, 'index.html')
-
 class HomeViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.

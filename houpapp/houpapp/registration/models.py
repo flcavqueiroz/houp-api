@@ -15,3 +15,10 @@ class Registration(models.Model):
         ordering = ('-created_at',)
     def __str__(self):
         return self.name
+
+class Login(models.Model):
+    login_email = models.ForeignKey(Registration, related_name='login_email', on_delete=models.CASCADE)
+    login_password = models.ForeignKey(Registration, related_name='login_password', on_delete=models.CASCADE)
+
+    
+

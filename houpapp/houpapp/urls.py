@@ -4,7 +4,6 @@ from django.urls import include, path
 from rest_framework import routers
 from houpapp.core import views
 from houpapp.registration.views import registration, detail
-from houpapp.core.views import index
 
 
 
@@ -21,7 +20,7 @@ router.register(r'blog', views.BlogViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('index/', views.index),
+    path('login/', registration),
     path('cadastro/', registration),
     path('cadastro/<int:pk>/', detail),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))

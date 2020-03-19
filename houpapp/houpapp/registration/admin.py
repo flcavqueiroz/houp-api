@@ -1,5 +1,5 @@
 from django.contrib import admin
-from houpapp.registration.models import Registration
+from houpapp.registration.models import Registration, Login
 from django.utils.timezone import now
 
 class RegistrationModelAdmin(admin.ModelAdmin):
@@ -16,4 +16,6 @@ class RegistrationModelAdmin(admin.ModelAdmin):
     registered_today.boolean = True
 
 admin.site.register(Registration, RegistrationModelAdmin)
+
+
 # Register your models here.

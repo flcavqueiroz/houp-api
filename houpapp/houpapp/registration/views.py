@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from houpapp.registration.forms import RegistrationForm
+from houpapp.registration.forms import RegistrationForm, LoginForm
 from django.http import HttpResponseRedirect, Http404
 from django.core import mail
 from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
-from houpapp.registration.models import Registration
+from houpapp.registration.models import Registration, Login
 
 
 
@@ -58,3 +58,8 @@ def password(request):
 def _send_mail(subject, from_, to, template_name, context):
     body = render_to_string(template_name, context)
     mail.send_mail(subject, body, from_, [from_, to])
+
+
+def login(request):
+    return render(request, 'login/login_html',
+            {'form': LoginForm()})
