@@ -47,7 +47,7 @@ def detail(request, pk):
     except Registration.DoesNotExist:
         raise Http404
     return render(request, 'registration/registration_detail.html',
-                    {'registration': registration   })
+                    {'registration': registration})
 
             
 def password(request):
@@ -60,6 +60,15 @@ def _send_mail(subject, from_, to, template_name, context):
     mail.send_mail(subject, body, from_, [from_, to])
 
 
+
+def login_register(request):
+    if request.method == 'POST':
+        return create(request)
+    else:
+        return new(request)
+
+
+
 def login(request):
-    return render(request, 'login/login_html',
+    return render(request, 'registration/login_html',
             {'form': LoginForm()})

@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from houpapp.core import views
-from houpapp.registration.views import registration, detail
+from houpapp.registration.views import registration, detail, login
 
 
 

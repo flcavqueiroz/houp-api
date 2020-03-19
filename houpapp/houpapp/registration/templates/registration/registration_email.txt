@@ -1,0 +1,21 @@
+Muito obrigado por se cadastrar no Ho-Up!
+
+Estes foram os dados que você nos forneceu:
+
+Nome: {{ registration.name }}
+
+CPF: {{ registration.cpf }}
+
+Email: {{ registration.email }}
+
+Telefone: {{ registration.phone }}
+
+Clique no link abaixo para confirmar seu cadastro.
+
+link: {{ registration.link }}
+
+Atenciosamente,
+
+--
+
+Ho-Up 

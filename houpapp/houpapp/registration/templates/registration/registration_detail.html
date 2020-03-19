@@ -1,0 +1,19 @@
+{% block content %}
+<!-- OVERVIEW -->
+<section>
+    <div class="content row padding-bottom-3 desktop-12 container">
+        <h1>Cadastro realizado com sucesso!</h1>
+        <div class="desktop-6">
+                <p>Estes foram os dados que você nos forneceu:</p>
+
+                <ul>
+                        <li>Nome: {{ registration.name }}</li>
+                        <li>CPF: {{ registration.cpf }}</li>
+                        <li>Email: {{ registration.email }}</li>
+                        <li>Telefone: {{ registration.phone }}</li>
+                </ul>
+                       
+        </div>
+    </div>
+</section>
+{% endblock content %}
