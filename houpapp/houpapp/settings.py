@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-#import dj_database_url
-#from dj_static import Cling, Csv
+from decouple import config, Csv
+from dj_database_url import parse as dburl
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,12 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5v#ei-6@ssbr7di)1%h-!3yj7$(uz_87vgs$d6zy1dz6is9x84'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
+
 
 
 # Application definition
@@ -138,10 +139,10 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-""" 
+
 EMAIL_BACKEND = config('EMAIL_BACKEND')
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD') """
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
