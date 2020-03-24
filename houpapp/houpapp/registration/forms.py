@@ -6,14 +6,14 @@ class RegistrationForm(forms.Form):
     cpf = forms.CharField(label = 'CPF')
     email = forms.EmailField(label = 'Email')
     phone = forms.CharField(label = 'Telefone')
-    password = forms.CharField(label = 'Senha')
-    password_confirm = forms.CharField(label = 'Confirme sua senha')
+    password = forms.PasswordInput()
+    password_confirm = forms.PasswordInput()
 
    
    
 class LoginForm(forms.Form):
     email = forms.EmailField(label = 'Email')
-    password = forms.CharField(label = 'Senha')
+    password = forms.PasswordInput()
    
    
    
