@@ -52,13 +52,12 @@ def email_list_signup(request):
 
 
 # Create your views here.
-""" def registration(request):
+def registration(request):
     if request.method == 'POST':
         return create(request)
     else:
         return new(request)
 
-"""
 def create(request):
     form = RegistrationForm(request.POST)
 
@@ -114,4 +113,3 @@ def login_register(request):
 def login(request):
     return render(request, 'registration/login_html',
             {'form': LoginForm()})
- 
