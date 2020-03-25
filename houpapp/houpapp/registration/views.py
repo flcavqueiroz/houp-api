@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
 from houpapp.registration.models import Registration, Login
+from .forms import RegistrationForm
 # from houpapp.utils import SendSubscribeMail
 
 import requests
@@ -38,15 +39,14 @@ def subscribe(email):
 
 
 def email_list_signup(request):
-    form = RegistrationForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            email_signup_qs = LoginForm.objects.filter(email=form.instance.email)
-            if email_signup_qs.exists():
-                messages.info(request, "You are already subscribed")
-            else:
-                subscribe(form.instance.email)
-                form.save()
+    form = RegistrationForm(request.POST)
+    if form.is_valid():
+        email_signup_qs = LoginForm.objects.filter(email=form.instance.email)
+        if email_signup_qs.exists():
+            messages.info(request, "You are already subscribed")
+        else:
+            subscribe(form.instance.email)
+            form.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 

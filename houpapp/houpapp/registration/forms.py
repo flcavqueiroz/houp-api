@@ -1,13 +1,17 @@
 from django import forms
-
+from .models import Registration
 
 class RegistrationForm(forms.Form):
-    name = forms.CharField(label = 'Nome')
-    cpf = forms.CharField(label = 'CPF')
-    email = forms.EmailField(label = 'Email')
-    phone = forms.CharField(label = 'Telefone')
-    password = forms.PasswordInput()
-    password_confirm = forms.PasswordInput()
+    email = forms.EmailField(widget=forms.TextInput(attrs={
+        "type": "email",
+        "name": "email",
+        "id": "email",
+        "placeholder": "Type your email address",
+    }), label="")
+
+    class Meta:
+        model = Registration
+        fields = ('email', )
 
    
    
