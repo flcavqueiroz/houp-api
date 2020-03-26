@@ -1,13 +1,14 @@
 from django import forms
-from .models import Registration
+from .models import Registration, Login
 
 class RegistrationForm(forms.Form):
-    email = forms.EmailField(widget=forms.TextInput(attrs={
-        "type": "email",
-        "name": "email",
-        "id": "email",
-        "placeholder": "Type your email address",
-    }), label="")
+    name = forms.CharField(max_length=50)
+    email = forms.EmailField(label = 'Email')
+    phone = forms.CharField(max_length=11)
+    cpf = forms.CharField(max_length=11)
+    password = forms.CharField()
+    password_confirm = forms.CharField()
+
 
     class Meta:
         model = Registration
@@ -18,6 +19,11 @@ class RegistrationForm(forms.Form):
 class LoginForm(forms.Form):
     email = forms.EmailField(label = 'Email')
     password = forms.PasswordInput()
+
+
+    class Meta:
+        model = Login
+        fields = ('email', )
    
    
    

@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'houpapp',
     'houpapp.core',
     'houpapp.registration',
-    'whitenoise'
+    'whitenoise',
+    'mailchimp',
+    'anymail'
 ]
 
 MIDDLEWARE = [
@@ -142,6 +144,9 @@ REST_FRAMEWORK = {
 }
 
 
-MAILCHIMP_API_KEY = ''
-MAILCHIMP_DATA_CENTER = ''
-MAILCHIMP_EMAIL_LIST_ID = ''
+MAILCHIMP_API_KEY = '28776aa05aebd9a3ed45f729762430e3-us16'
+MAILCHIMP_DATA_CENTER = 'us-16'
+MAILCHIMP_EMAIL_LIST_ID = 'houpapp'
+
+
+

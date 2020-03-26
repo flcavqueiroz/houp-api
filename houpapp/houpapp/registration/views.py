@@ -6,13 +6,13 @@ from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
 from houpapp.registration.models import Registration, Login
-from .forms import RegistrationForm
+from .forms import RegistrationForm, LoginForm
 # from houpapp.utils import SendSubscribeMail
 
 import requests
 import json
 
-
+"""
 MAILCHIMP_API_KEY = settings.MAILCHIMP_API_KEY
 MAILCHIMP_DATA_CENTER = settings.MAILCHIMP_DATA_CENTER
 MAILCHIMP_EMAIL_LIST_ID = settings.MAILCHIMP_EMAIL_LIST_ID
@@ -47,7 +47,7 @@ def email_list_signup(request):
         else:
             subscribe(form.instance.email)
             form.save()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))"""
 
 
 
@@ -111,5 +111,5 @@ def login_register(request):
 
 
 def login(request):
-    return render(request, 'registration/login_html',
+    return render(request, 'registration/login.html',
             {'form': LoginForm()})
