@@ -11,8 +11,8 @@ from houpapp.registration.views import detail, login, registration, new, login_r
 router = routers.DefaultRouter()
 router.register(r'home', views.HomeViewSet)
 router.register(r'work', views.WorkViewSet)
-router.register(r'price', views.PriceViewSet)
 router.register(r'case', views.CaseViewSet)
+router.register(r'price', views.PriceViewSet)
 router.register(r'faq', views.FAQViewSet)
 router.register(r'blog', views.BlogViewSet)
 
