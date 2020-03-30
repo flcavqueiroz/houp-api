@@ -7,12 +7,12 @@ from django.contrib import messages
 from django.conf import settings
 from houpapp.registration.models import Registration, Login
 from .forms import RegistrationForm, LoginForm
-# from houpapp.utils import SendSubscribeMail
+from houpapp.utils import SendSubscribeMail
 
 import requests
 import json
 
-"""
+
 MAILCHIMP_API_KEY = settings.MAILCHIMP_API_KEY
 MAILCHIMP_DATA_CENTER = settings.MAILCHIMP_DATA_CENTER
 MAILCHIMP_EMAIL_LIST_ID = settings.MAILCHIMP_EMAIL_LIST_ID
@@ -27,15 +27,16 @@ members_endpoint = '{api_url}/lists/{list_id}/members'.format(
 
 def subscribe(email):
     data = {
-        "email_address": email,
-        "status": "subscribed"
-    }
+        email: email
+        #status: subscribe
+        }
     r = requests.post(
         members_endpoint,
         auth=("", MAILCHIMP_API_KEY),
-        data=json.dumps(data)
+        data=json.dumps('data')
     )
     return r.status_code, r.json()
+
 
 
 def email_list_signup(request):
@@ -47,8 +48,7 @@ def email_list_signup(request):
         else:
             subscribe(form.instance.email)
             form.save()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))"""
-
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 # Create your views here.

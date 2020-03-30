@@ -1,5 +1,6 @@
 from .models import Home, Work, Case, Price, FAQ, Blog
 from rest_framework import serializers
+from houpapp.registration.models import Registration, Login
 
 
 
@@ -34,3 +35,10 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         fields = ['id', 'name', 'link']
+
+
+class RegistrationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Registration
+        fields = ['id', 'name', 'phone', 'cpf', 'password', 'password_confirm']

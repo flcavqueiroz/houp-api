@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from houpapp.core import views
-from houpapp.registration.views import detail, login, registration, new, login_register, create
+from houpapp.registration.views import detail, login, registration, new, login_register, create, subscribe
 
 
 
@@ -20,6 +20,7 @@ router.register(r'blog', views.BlogViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
+    path('subscribe/', subscribe),
     path('login/', login),
     path('cadastro/', registration),
     path('cadastro/<int:pk>/', detail),
