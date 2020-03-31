@@ -24,5 +24,6 @@ urlpatterns = [
     path('login/', login),
     path('cadastro/', registration),
     path('cadastro/<int:pk>/', detail),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include('oauth2_provider.urls', namespace='oauth2_provider'))
 ]

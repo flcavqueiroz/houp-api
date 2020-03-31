@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'houpapp.registration',
     'whitenoise',
     'mailchimp',
-    'anymail'
+    'anymail',
+    'oauth2_provider'
 ]
 
 MIDDLEWARE = [
@@ -140,13 +141,26 @@ STATICFILES_DIRS = []
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 10,
+    'DEFAULT_AUTHENTICATION_CLASSES': ('oauth2_provider.contrib.rest_framework.OAuth2Authentication',)
+
 }
 
 
+
+OAUTH2_PROVIDER = {
+    # this is the list of available scopes
+    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'},
+    'ACCESS_TOKEN_EXPIRE_SECONDS': 36000,
+}
+
 MAILCHIMP_API_KEY = '28776aa05aebd9a3ed45f729762430e3-us16'
 MAILCHIMP_DATA_CENTER = 'us-16'
-MAILCHIMP_EMAIL_LIST_ID = 'houpapp'
+MAILCHIMP_EMAIL_LIST_ID = 'houp'
 
 
+'''
+OAuth2
+
+'''
 

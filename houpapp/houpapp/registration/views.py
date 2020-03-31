@@ -28,7 +28,7 @@ members_endpoint = '{api_url}/lists/{list_id}/members'.format(
 def subscribe(email):
     data = {
         email: email
-        #status: subscribe
+
         }
     r = requests.post(
         members_endpoint,
