@@ -33,7 +33,7 @@ def subscribe(email):
     r = requests.post(
         members_endpoint,
         auth=("", MAILCHIMP_API_KEY),
-        data=json.dumps('data')
+        data=json.dumps('')
     )
     return r.status_code, r.json()
 

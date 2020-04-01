@@ -19,6 +19,7 @@ router.register(r'blog', views.BlogViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('subscribe/', subscribe),
     path('login/', login),
