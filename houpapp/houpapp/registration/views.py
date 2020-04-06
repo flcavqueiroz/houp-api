@@ -9,11 +9,13 @@ from houpapp.registration.models import Registration, Login
 from .forms import RegistrationForm, LoginForm
 from houpapp.utils import SendSubscribeMail
 
+import mandrill
+
 import requests
 import json
 
 
-MAILCHIMP_API_KEY = settings.MAILCHIMP_API_KEY
+MANDRILL_API_KEY = settings.MANDRILL_API_KEY
 MAILCHIMP_DATA_CENTER = settings.MAILCHIMP_DATA_CENTER
 MAILCHIMP_EMAIL_LIST_ID = settings.MAILCHIMP_EMAIL_LIST_ID
 
@@ -28,7 +30,7 @@ def subscribe(email):
         }
     r = requests.post(
         members_endpoint,
-        auth=("", MAILCHIMP_API_KEY),
+        auth=("", MANDRILL_API_KEY),
         data=json.dumps('')
     )
     return r.status_code, r.json()

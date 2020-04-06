@@ -49,7 +49,9 @@ INSTALLED_APPS = [
     'whitenoise',
     'mailchimp',
     'anymail',
-    'oauth2_provider'
+    'oauth2_provider',
+    'mandrill',
+    'django_mandrill'
 ]
 
 MIDDLEWARE = [
@@ -154,7 +156,7 @@ OAUTH2_PROVIDER = {
     'ACCESS_TOKEN_EXPIRE_SECONDS': 48000,
 }
 
-MAILCHIMP_API_KEY = '28776aa05aebd9a3ed45f729762430e3-us16'
+MANDRILL_API_KEY = 'Pwc7R3ZXRGyZljB2otJucg'
 MAILCHIMP_DATA_CENTER = 'us-16'
 MAILCHIMP_EMAIL_LIST_ID = 'houp'
 
