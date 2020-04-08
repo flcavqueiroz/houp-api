@@ -24,7 +24,7 @@ class CaseSerializer(serializers.ModelSerializer):
 class PriceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Price
-        fields = ['id', 'first_value', 'second_value', 'third_value']
+        fields = ['id', 'um_ambiente', 'dois_ambientes', 'tres_ambientes']
 
 class FAQSerializer(serializers.ModelSerializer):
     class Meta:

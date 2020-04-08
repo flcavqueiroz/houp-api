@@ -22,9 +22,9 @@ class Case(models.Model):
     name = models.CharField(max_length=20)
 
 class Price(models.Model):
-    first_value = models.IntegerField()
-    second_value = models.IntegerField()
-    third_value = models.IntegerField()
+    um_ambiente = models.IntegerField()
+    dois_ambientes = models.IntegerField()
+    tres_ambientes = models.IntegerField()
     
 
 class FAQ(models.Model):
