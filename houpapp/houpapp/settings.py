@@ -156,13 +156,17 @@ OAUTH2_PROVIDER = {
     'ACCESS_TOKEN_EXPIRE_SECONDS': 48000,
 }
 
-MANDRILL_API_KEY = 'Pwc7R3ZXRGyZljB2otJucg'
-MAILCHIMP_DATA_CENTER = 'us-16'
+
+
+MANDRILL_API_KEY = 'Pwc7R3ZXRGyZljB2otJucg' 
+
+
+
+MAILCHIMP_DATA_CENTER = 'us16'
 MAILCHIMP_EMAIL_LIST_ID = 'houp'
 
 
-'''
-OAuth2
+EMAIL_BACKEND = 'django_mandrill.mail.backends.mandrillbackend.EmailBackend'
 
-'''
+DEFAULT_FROM_EMAIL = 'fernando.avila@concore.io'
 

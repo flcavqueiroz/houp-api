@@ -9,6 +9,7 @@ from houpapp.registration.models import Registration, Login
 from .forms import RegistrationForm, LoginForm
 from houpapp.utils import SendSubscribeMail
 
+import anymail
 import mandrill
 
 import requests
@@ -24,6 +25,7 @@ members_endpoint = f'{api_url}/lists/{MAILCHIMP_EMAIL_LIST_ID}/members'
 
 
 
+
 def subscribe(email):
     data = {
         email: email
@@ -31,7 +33,7 @@ def subscribe(email):
     r = requests.post(
         members_endpoint,
         auth=("", MANDRILL_API_KEY),
-        data=json.dumps('')
+        data=json.dumps('data')
     )
     return r.status_code, r.json()
 
@@ -40,7 +42,7 @@ def subscribe(email):
 def email_list_signup(request):
     form = RegistrationForm(request.POST)
     if form.is_valid():
-        email_signup_qs = LoginForm.objects.filter(email=form.instance.email)
+        email_signup_qs = RegistrationForm.objects.filter(email=form.instance.email)
         if email_signup_qs.exists():
             messages.info(request, "You are already subscribed")
         else:
