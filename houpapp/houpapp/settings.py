@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-#from decouple import config, Csv
-#from dj_database_url import parse as dburl
+from decouple import config, Csv
+from dj_database_url import parse as dburl
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,14 +23,21 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
+"""
 SECRET_KEY = '5v#ei-6@ssbr7di)1%h-!3yj7$(uz_87vgs$d6zy1dz6is9x84'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = '.localhost'
+"""
 
+SECRET_KEY = config('SECRET_KEY')
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = config('DEBUG', default=False, cast=bool)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
+
+DEFAULT_FROM_EMAIL = 'fernando.avila@concore.io'
 
 
 # Application definition
@@ -71,7 +78,7 @@ ROOT_URLCONF = 'houpapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,13 +142,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-STATIC_URL = '/staticfiles/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = []
 
 
 
 REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DEFAULT_AUTHENTICATION_CLASSES': ('oauth2_provider.contrib.rest_framework.OAuth2Authentication',)
@@ -157,16 +167,11 @@ OAUTH2_PROVIDER = {
 }
 
 
-
 MANDRILL_API_KEY = 'Pwc7R3ZXRGyZljB2otJucg' 
-
-
-
 MAILCHIMP_DATA_CENTER = 'us16'
 MAILCHIMP_EMAIL_LIST_ID = 'houp'
 
 
-EMAIL_BACKEND = 'django_mandrill.mail.backends.mandrillbackend.EmailBackend'
+EMAIL_BACKEND = 'anymail.mail.backends.mandrillbackend.EmailBackend'
 
-DEFAULT_FROM_EMAIL = 'fernando.avila@concore.io'
 

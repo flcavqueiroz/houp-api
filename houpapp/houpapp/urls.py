@@ -4,7 +4,7 @@ from django.urls import include, path
 from rest_framework import routers
 from houpapp.core import views
 from houpapp.registration.views import detail, login, registration, new, login_register, create, subscribe
-
+from django.views.generic import TemplateView
 
 
 
@@ -21,10 +21,10 @@ router.register(r'blog', views.BlogViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('subscribe/', subscribe),
     path('login/', login),
-    path('cadastro/', registration),
-    path('cadastro/<int:pk>/', detail),
+    path('cadastro/', subscribe),
+    path('cadastro/<int:pk>/', subscribe),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('', include('oauth2_provider.urls', namespace='oauth2_provider'))
+    path('', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path('', TemplateView.as_view(template_name='public/index.html'))
 ]

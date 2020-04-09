@@ -1,5 +1,6 @@
 import threading
 import mailchimp
+import mandrill
 from django.conf import settings
 
 class SendSubscribeMail(object):
@@ -10,7 +11,7 @@ class SendSubscribeMail(object):
 		thread.start()                                 
 
 	def run(self):
-		API_KEY = settings.MAILCHIMP_API_KEY
+		API_KEY = settings.MANDRILL_API_KEY
 		LIST_ID = settings.MAILCHIMP_SUBSCRIBE_LIST_ID
 		api = mailchimp.Mailchimp(API_KEY)
 		try:

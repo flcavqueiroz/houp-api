@@ -20,35 +20,53 @@ MANDRILL_API_KEY = settings.MANDRILL_API_KEY
 MAILCHIMP_DATA_CENTER = settings.MAILCHIMP_DATA_CENTER
 MAILCHIMP_EMAIL_LIST_ID = settings.MAILCHIMP_EMAIL_LIST_ID
 
-api_url = f'https://{MAILCHIMP_DATA_CENTER}.api.mailchimp.com/3.0'
-members_endpoint = f'{api_url}/lists/{MAILCHIMP_EMAIL_LIST_ID}/members'
+MANDRILL_API_URL = "https://mandrillapp.com/api/1.0"
+members_endpoint = f'{MANDRILL_API_URL}/lists/{MAILCHIMP_EMAIL_LIST_ID}/members'
 
 
 
 
-def subscribe(email):
-    data = {
-        email: email
+def subscribe(request):
+    if request.method == 'POST':
+        data = {
+            email: 'fernando.avila@concore.io'
         }
-    r = requests.post(
+        r = requests.post(
         members_endpoint,
         auth=("", MANDRILL_API_KEY),
-        data=json.dumps('data')
-    )
-    return r.status_code, r.json()
+        data=json.dumps('')
+        )
+        return email_list_signup(request), r.status_code, r.json()
+    else:
+        return new(request)
 
 
 
 def email_list_signup(request):
     form = RegistrationForm(request.POST)
-    if form.is_valid():
+    if not form.is_valid():
+        return render(request, 'registration/registration_form.html',
+                    {'form': form})
+        
+    registration = Registration.objects.create(**form.cleaned_data)
+    # Send registration email
+    _send_mail('Confirmação de cadastro',
+                settings.DEFAULT_FROM_EMAIL,
+                registration.email,
+                'registration/registration_email.txt',
+                {'registration': registration})
+                
+    return HttpResponseRedirect(f'/cadastro/{registration.pk}/')
+
+
+    """ if form.is_valid():
         email_signup_qs = RegistrationForm.objects.filter(email=form.instance.email)
         if email_signup_qs.exists():
             messages.info(request, "You are already subscribed")
         else:
             subscribe(form.instance.email)
             form.save()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+ """
 
 
 # Create your views here.
