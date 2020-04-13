@@ -149,11 +149,11 @@ STATICFILES_DIRS = []
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    ),
+    #'DEFAULT_RENDERER_CLASSES': (
+    #    'rest_framework.renderers.JSONRenderer',
+    #),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 20,
     'DEFAULT_AUTHENTICATION_CLASSES': ('oauth2_provider.contrib.rest_framework.OAuth2Authentication',)
 
 }
@@ -172,6 +172,6 @@ MAILCHIMP_DATA_CENTER = 'us16'
 MAILCHIMP_EMAIL_LIST_ID = 'houp'
 
 
-EMAIL_BACKEND = 'anymail.mail.backends.mandrillbackend.EmailBackend'
+#EMAIL_BACKEND = 'anymail.mail.backends.mandrillbackend.EmailBackend'
 
 

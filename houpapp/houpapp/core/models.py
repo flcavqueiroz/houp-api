@@ -34,3 +34,15 @@ class FAQ(models.Model):
 class Blog(models.Model):
     name = models.CharField(max_length=50)
     link = models.URLField()
+
+
+class CheckOut(models.Model):
+    email = models.CharField(max_length=100)
+    api_key = models.CharField(max_length=100)
+    source_id = models.CharField(max_length=100)
+    target_type = models.CharField(max_length=20)
+    target_id = models.CharField(max_length=20)
+    card_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.email

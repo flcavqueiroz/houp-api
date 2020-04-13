@@ -15,6 +15,7 @@ router.register(r'case', views.CaseViewSet)
 router.register(r'price', views.PriceViewSet)
 router.register(r'faq', views.FAQViewSet)
 router.register(r'blog', views.BlogViewSet)
+router.register(r'checkout', views.CheckOutViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

@@ -1,4 +1,4 @@
-from .models import Home, Work, Case, Price, FAQ, Blog
+from .models import Home, Work, Case, Price, FAQ, Blog, CheckOut
 from rest_framework import serializers
 from houpapp.registration.models import Registration, Login
 
@@ -42,3 +42,12 @@ class RegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registration
         fields = ['id', 'name', 'phone', 'cpf', 'password', 'password_confirm']
+
+
+class CheckOutSerializer(serializers.ModelSerializer):
+
+
+    class Meta:
+        model = CheckOut
+        fields = ['id', 'email', 'api_key', 'source_id', 'target_type', 'target_id', 'card_name']
+

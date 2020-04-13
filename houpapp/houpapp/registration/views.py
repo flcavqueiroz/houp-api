@@ -34,7 +34,7 @@ def subscribe(request):
         r = requests.post(
         members_endpoint,
         auth=("", MANDRILL_API_KEY),
-        data=json.dumps('')
+        data=json.loads('')
         )
         return email_list_signup(request), r.status_code, r.json()
     else:

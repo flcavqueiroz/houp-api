@@ -1,10 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
-#from django.contrib.auth.models import Home, Work, Case, Price, FAQ, Blog
 from rest_framework import viewsets
-from houpapp.core.serializers import HomeSerializer, WorkSerializer, CaseSerializer, PriceSerializer, BlogSerializer, FAQSerializer, RegistrationSerializer
-from houpapp.core.models import Home, Work, Case, Price, FAQ, Blog
+from houpapp.core.serializers import HomeSerializer, WorkSerializer, CaseSerializer, PriceSerializer, BlogSerializer, FAQSerializer, RegistrationSerializer, CheckOutSerializer
+from houpapp.core.models import Home, Work, Case, Price, FAQ, Blog, CheckOut
 from houpapp.registration.models import Registration, Login
 
 
@@ -48,3 +47,9 @@ class RegistrationViewSet(viewsets.ModelViewSet):
 
     queryset = Registration.objects.all()
     serializer_class = RegistrationSerializer
+
+
+class CheckOutViewSet(viewsets.ModelViewSet):
+
+    queryset = CheckOut.objects.all().order_by('email')
+    serializer_class = CheckOutSerializer
