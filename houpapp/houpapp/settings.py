@@ -172,6 +172,6 @@ MAILCHIMP_DATA_CENTER = 'us16'
 MAILCHIMP_EMAIL_LIST_ID = 'houp'
 
 
-#EMAIL_BACKEND = 'anymail.mail.backends.mandrillbackend.EmailBackend'
+# EMAIL_BACKEND = 'mandrillmail.mail.backends.mandrillbackend.EmailBackend'
 
 

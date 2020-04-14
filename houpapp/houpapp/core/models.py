@@ -6,7 +6,7 @@ from django.db import models
 class Home(models.Model):
     home = models.CharField(max_length=10)
     name = models.CharField(max_length=20)
-    email = models.EmailField()
+    home_email = models.EmailField()
 
     def __str__(self):
         return self.home
@@ -37,12 +37,15 @@ class Blog(models.Model):
 
 
 class CheckOut(models.Model):
-    email = models.CharField(max_length=100)
+    email = models.ForeignKey(Home, on_delete=models.CASCADE, related_name='email')
     api_key = models.CharField(max_length=100)
     source_id = models.CharField(max_length=100)
     target_type = models.CharField(max_length=20)
     target_id = models.CharField(max_length=20)
-    card_name = models.CharField(max_length=30)
+    card_name = models.ForeignKey(Home, related_name='card_name', on_delete=models.CASCADE)
+    card_number = models.IntegerField()
+    card_cvv = models.IntegerField()
+    expiration_date = models.DateField()
 
     def __str__(self):
         return self.email

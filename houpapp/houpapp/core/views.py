@@ -51,5 +51,5 @@ class RegistrationViewSet(viewsets.ModelViewSet):
 
 class CheckOutViewSet(viewsets.ModelViewSet):
 
-    queryset = CheckOut.objects.all().order_by('email')
+    queryset = CheckOut.objects.all()
     serializer_class = CheckOutSerializer

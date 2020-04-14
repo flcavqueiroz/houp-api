@@ -8,7 +8,7 @@ from houpapp.registration.models import Registration, Login
 class HomeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Home
-        fields = ['id', 'home', 'name', 'email']
+        fields = ['id', 'home', 'name', 'home_email']
 
 
 class WorkSerializer(serializers.ModelSerializer):
@@ -49,5 +49,5 @@ class CheckOutSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CheckOut
-        fields = ['id', 'email', 'api_key', 'source_id', 'target_type', 'target_id', 'card_name']
+        fields = ['id', 'email', 'api_key', 'source_id', 'target_type', 'target_id', 'card_name', 'card_number', 'card_cvv', 'expiration_date']
 
