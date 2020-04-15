@@ -3,14 +3,14 @@ import pagarme
 pagarme.authentication_key('ak_test_wWCz5DhB73yJyoO5sYkMre2wEjFKib')
 
 params = {
-		"amount": "",
-    "card_number": "",
-    "card_cvv": "",
-    "card_expiration_date": "",
-    "card_holder_name": "",
+		"amount": "2100",
+    "card_number": "1234567890123456",
+    "card_cvv": "123",
+    "card_expiration_date": "9999",
+    "card_holder_name": "Morpheus Fishburne",
     "customer": {
-      "external_id": "",
-      "name": "",
+      "external_id": "1111",
+      "name": "Morpheus fishburne",
       "type": "individual",
       "country": "br",
       "email": "mopheus@nabucodonozor.com",

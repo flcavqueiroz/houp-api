@@ -37,7 +37,7 @@ class Blog(models.Model):
 
 
 class CheckOut(models.Model):
-    email = models.ForeignKey(Home, on_delete=models.CASCADE, related_name='email')
+    email = models.ForeignKey(Home, related_name='email', on_delete=models.CASCADE)
     api_key = models.CharField(max_length=100)
     source_id = models.CharField(max_length=100)
     target_type = models.CharField(max_length=20)

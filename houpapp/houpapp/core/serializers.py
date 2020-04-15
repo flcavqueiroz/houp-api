@@ -3,8 +3,6 @@ from rest_framework import serializers
 from houpapp.registration.models import Registration, Login
 
 
-
-
 class HomeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Home
