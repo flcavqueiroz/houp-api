@@ -3,14 +3,14 @@ import pagarme
 pagarme.authentication_key('ak_test_wWCz5DhB73yJyoO5sYkMre2wEjFKib')
 
 params = {
-		"amount": "2100",
-    "card_number": "1234567890123456",
+		"amount": "21000",
+    "card_number": "4111111111111111",
     "card_cvv": "123",
-    "card_expiration_date": "9999",
+    "card_expiration_date": "0922",
     "card_holder_name": "Morpheus Fishburne",
     "customer": {
-      "external_id": "1111",
-      "name": "Morpheus fishburne",
+      "external_id": "#3311",
+      "name": "Morpheus Fishburne",
       "type": "individual",
       "country": "br",
       "email": "mopheus@nabucodonozor.com",
@@ -68,6 +68,34 @@ params = {
     ]
 }
 
+card_data = {
+    "card_expiration_date": "1122",
+    "card_number": "4018720572598048",
+    "card_cvv": "123",
+    "card_holder_name": "Cersei Lannister"
+}
+
+print (pagarme.card.create(card_data))
+
+
+
+transfer_params = {
+    'amount': '10000',
+    'recipient_id': 'RECIPIENT_ID'
+}
+
+transfer = pagarme.transfer.create(transfer_params)
+
+print (transfer)
+
+
+trx = pagarme.transaction.create(params)
+
+print(trx)
 
 trx = pagarme.transaction.create(params)
 print(trx)
+
+
+balance = pagarme.balance.default_recipient_balance()
+print(balance)
