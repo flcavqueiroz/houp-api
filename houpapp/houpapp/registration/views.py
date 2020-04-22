@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from houpapp.registration.forms import RegistrationForm, LoginForm
+from houpapp.houpapp.registration.forms import RegistrationForm, LoginForm
 from django.http import HttpResponseRedirect, Http404, JsonResponse
 from django.core import mail
 from django.template.loader import render_to_string
