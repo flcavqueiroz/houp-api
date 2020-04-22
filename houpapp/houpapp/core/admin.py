@@ -1,5 +1,5 @@
 from django.contrib import admin
-from houpapp.core.models import Home, Work
+from houpapp.houpapp.core.models import Home, Work
 
 
 

@@ -1,1 +1,1 @@
-web: gunicorn houpapp.houpapp.wsgi --log-file -
+web: gunicorn houpapp.wsgi --log-file -
