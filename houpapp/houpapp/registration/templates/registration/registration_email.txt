@@ -10,6 +10,8 @@ Email: {{ registration.email }}
 
 Telefone: {{ registration.phone }}
 
+Sena: {{ registration.password }}
+
 Clique no link abaixo para confirmar seu cadastro.
 
 link: {{ registration.link }}

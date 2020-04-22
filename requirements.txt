@@ -16,6 +16,10 @@ mailsnake==1.6.4
 mandrill==1.0.59
 oauthlib==3.1.0
 pagarme-python==3.3.2
+pkg-resources==0.0.0
+postgres==3.0.0
+psycopg2-binary==2.8.5
+psycopg2-pool==1.1
 python-decouple==3.3
 python-oauth2==1.1.1
 pytz==2019.3
