@@ -5,7 +5,7 @@ from django.core import mail
 from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
-from houpapp.registration.models import Registration, Login
+from houpapp.houpapp.registration.models import Registration, Login
 from .forms import RegistrationForm, LoginForm
 from houpapp.utils import SendSubscribeMail
 

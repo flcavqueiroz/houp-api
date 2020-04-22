@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import viewsets
-from houpapp.core.serializers import HomeSerializer, WorkSerializer, CaseSerializer, PriceSerializer, BlogSerializer, FAQSerializer, RegistrationSerializer, CheckOutSerializer
-from houpapp.core.models import Home, Work, Case, Price, FAQ, Blog, CheckOut
-from houpapp.registration.models import Registration, Login
+from houpapp.houpapp.core.serializers import HomeSerializer, WorkSerializer, CaseSerializer, PriceSerializer, BlogSerializer, FAQSerializer, RegistrationSerializer, CheckOutSerializer
+from houpapp.houpapp.core.models import Home, Work, Case, Price, FAQ, Blog, CheckOut
+from houpapp.houpapp.registration.models import Registration, Login
 
 
 class HomeViewSet(viewsets.ModelViewSet):

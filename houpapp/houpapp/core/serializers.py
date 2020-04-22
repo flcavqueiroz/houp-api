@@ -1,6 +1,6 @@
 from .models import Home, Work, Case, Price, FAQ, Blog, CheckOut
 from rest_framework import serializers
-from houpapp.registration.models import Registration, Login
+from houpapp.houpapp.registration.models import Registration, Login
 
 
 class HomeSerializer(serializers.ModelSerializer):
