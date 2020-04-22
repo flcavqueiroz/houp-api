@@ -73,7 +73,7 @@ MIDDLEWARE = [
     
 ]
 
-ROOT_URLCONF = 'houpapp.urls'
+ROOT_URLCONF = 'houpapp.houpapp.urls'
 
 TEMPLATES = [
     {
