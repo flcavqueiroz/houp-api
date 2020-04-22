@@ -1,5 +1,5 @@
 from django.contrib import admin
-from houpapp.registration.models import Registration, Login
+from houpapp.houpapp.registration.models import Registration, Login
 from django.utils.timezone import now
 
 class RegistrationModelAdmin(admin.ModelAdmin):
