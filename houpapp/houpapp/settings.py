@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'houpapp',
     'houpapp.houpapp.core',
-    'houpapp.registration',
+    'houpapp.houpapp.registration',
     'whitenoise',
     'mailchimp',
     'anymail',
