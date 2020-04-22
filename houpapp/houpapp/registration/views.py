@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.conf import settings
 from houpapp.houpapp.registration.models import Registration, Login
 from .forms import RegistrationForm, LoginForm
-from houpapp.utils import SendSubscribeMail
+from houpapp.houpapp.utils import SendSubscribeMail
 
 import anymail
 import mandrill
