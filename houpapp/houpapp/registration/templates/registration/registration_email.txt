@@ -10,7 +10,9 @@ Email: {{ registration.email }}
 
 Telefone: {{ registration.phone }}
 
-Sena: {{ registration.password }}
+Senha: {{ registration.password }}
+
+Senha Confirmada: {{ registration.password}}
 
 Clique no link abaixo para confirmar seu cadastro.
 
