@@ -164,11 +164,8 @@ OAUTH2_PROVIDER = {
 }
 
 
-MAILGUN_API_KEY = 'f135b0f1-429c12a4' 
-MAILCHIMP_DATA_CENTER = 'us16'
-MAILCHIMP_EMAIL_LIST_ID = 'houp'
+MAILGUN_API_KEY = '9d3e39fc25afef57b4e1408d830a4b76-f135b0f1-83ef4845' 
 
 
-EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
 
 
