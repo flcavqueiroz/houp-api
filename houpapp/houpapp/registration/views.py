@@ -70,7 +70,7 @@ def email_list_signup(request):
 
 
 # Create your views here.
-def registration(request, password_confirm):
+def registration(request):
     if request.method == 'POST':
         return create(request)
     else:
@@ -112,6 +112,10 @@ def detail(request, pk):
 def password(request):
     return render(request, 'registration/registration_form.html',
                     {'form': RegistrationForm()})
+
+def password_confirm(request):
+    return render(request, 'registration/registration_form.html',
+                    {'form': RegistrationForme()})
 
 
 def _send_mail(subject, from_, to, template_name, context):
