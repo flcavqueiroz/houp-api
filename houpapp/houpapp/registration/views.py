@@ -16,12 +16,12 @@ import requests
 import json
 
 
-MANDRILL_API_KEY = settings.MANDRILL_API_KEY
+MAILGUN_API_KEY = settings.MAILGUN_API_KEY
 MAILCHIMP_DATA_CENTER = settings.MAILCHIMP_DATA_CENTER
 MAILCHIMP_EMAIL_LIST_ID = settings.MAILCHIMP_EMAIL_LIST_ID
 
-MANDRILL_API_URL = "https://mandrillapp.com/api/1.0"
-members_endpoint = f'{MANDRILL_API_URL}/lists/{MAILCHIMP_EMAIL_LIST_ID}/members'
+MAILGUN_API_URL = "https://mandrillapp.com/api/1.0"
+members_endpoint = f'{MAILGUN_API_URL}/lists/{MAILCHIMP_EMAIL_LIST_ID}/members'
 
 
 
@@ -33,7 +33,7 @@ def subscribe(request):
         }
         r = requests.post(
         members_endpoint,
-        auth=("", MANDRILL_API_KEY),
+        auth=("", MAILGUN_API_KEY),
         data=json.loads('')
         )
         return email_list_signup(request), r.status_code, r.json()
