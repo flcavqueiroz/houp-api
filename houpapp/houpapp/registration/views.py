@@ -29,7 +29,7 @@ members_endpoint = f'{MAILGUN_API_URL}/lists/{MAILCHIMP_EMAIL_LIST_ID}/members'
 def subscribe(request):
     if request.method == 'POST':
         data = {
-            email: 'email'
+            email: 'flcavqueiroz@gmail.com'
         }
         r = requests.post(
         members_endpoint,
