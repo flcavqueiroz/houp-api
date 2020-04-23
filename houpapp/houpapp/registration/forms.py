@@ -6,8 +6,8 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField(label = 'Email')
     phone = forms.CharField(label = 'Telefone')
     cpf = forms.CharField(label = 'CPF')
-    password = forms.PasswordInput()
-    password_confirm = forms.PasswordInput()
+    password = forms.PasswordInput(render_value=True)
+    password_confirm = forms.PasswordInput(render_value=True)
 
 
     class Meta:
