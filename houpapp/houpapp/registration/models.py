@@ -7,7 +7,7 @@ class Registration(models.Model):
     email = models.EmailField('email')
     phone = models.CharField('telefone', max_length=20)
     password = models.CharField('senha', max_length=12)
-    password_confirm = models.CharField()
+    password_confirm = models.CharField('senha', max_length=12)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
 
     class Meta:

@@ -12,7 +12,7 @@ class RegistrationForm(forms.Form):
 
     class Meta:
         model = Registration
-        fields = ('email', )
+        fields = ('name', )
 
    
    

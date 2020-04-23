@@ -37,7 +37,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
-DEFAULT_FROM_EMAIL = 'fernando.avila@concore.io'
+DEFAULT_FROM_EMAIL = config('EMAIL_HOST_USER')
 
 
 # Application definition
@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'houpapp',
+    'houpapp.houpapp',
     'houpapp.houpapp.core',
     'houpapp.houpapp.registration',
     'whitenoise',
@@ -91,7 +91,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'houpapp.wsgi.application'
+WSGI_APPLICATION = 'houpapp.houpapp.wsgi.application'
 
 
 # Database
