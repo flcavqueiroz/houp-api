@@ -2,12 +2,12 @@ from django import forms
 from .models import Registration, Login
 
 class RegistrationForm(forms.Form):
-    name = forms.CharField(max_length=50)
+    name = forms.CharField(label = 'Nome')
     email = forms.EmailField(label = 'Email')
-    phone = forms.CharField(max_length=11)
-    cpf = forms.CharField(max_length=11)
-    password = forms.CharField()
-    password_confirm = forms.CharField()
+    phone = forms.CharField(label = 'Telefone')
+    cpf = forms.CharField(label = 'CPF')
+    password = forms.PasswordInput()
+    password_confirm = forms.PasswordInput()
 
 
     class Meta:
