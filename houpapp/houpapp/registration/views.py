@@ -70,7 +70,7 @@ def email_list_signup(request):
 
 
 # Create your views here.
-def registration(request):
+def registration(request, password_confirm):
     if request.method == 'POST':
         return create(request)
     else:
