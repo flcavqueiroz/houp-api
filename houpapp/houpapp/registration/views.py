@@ -115,7 +115,7 @@ def password(request):
 
 def password_confirm(request):
     return render(request, 'registration/registration_form.html',
-                    {'form': RegistrationForme()})
+                    {'form': RegistrationForm()})
 
 
 def _send_mail(subject, from_, to, template_name, context):
