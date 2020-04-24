@@ -24,7 +24,7 @@ urlpatterns = [
     path('', include(router.urls)),
     path('login/', login),
     path('cadastro/', registration),
-    path('cadastro/<int:pk>/', registration),
+    path('cadastro/<int:pk>/', create),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('', include('oauth2_provider.urls', namespace='oauth2_provider')),
     path('', TemplateView.as_view(template_name='public/index.html'))
