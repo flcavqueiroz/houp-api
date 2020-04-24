@@ -169,5 +169,6 @@ MAILCHIMP_DATA_CENTER = 'us16'
 MAILCHIMP_EMAIL_LIST_ID = 'houp'
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
